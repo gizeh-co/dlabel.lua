@@ -11,8 +11,8 @@ AccessorFunc( PANEL, "m_bAutoStretchVertical",	"AutoStretchVertical",		FORCE_BOO
 AccessorFunc( PANEL, "m_bIsMenuComponent",		"IsMenu",					FORCE_BOOL )
 
 AccessorFunc( PANEL, "m_bBackground",	"PaintBackground",	FORCE_BOOL )
-AccessorFunc( PANEL, "m_bBackground",	"DrawBackground",	FORCE_BOOL ) -- deprecated, see line above
-AccessorFunc( PANEL, "m_bDisabled",		"Disabled",			FORCE_BOOL ) -- deprecated, use SetEnabled/IsEnabled isntead
+AccessorFunc( PANEL, "m_bBackground",	"DrawBackground",	FORCE_BOOL )
+AccessorFunc( PANEL, "m_bDisabled",		"Disabled",			FORCE_BOOL )
 
 AccessorFunc( PANEL, "m_bIsToggle",		"IsToggle",		FORCE_BOOL )
 AccessorFunc( PANEL, "m_bToggle",		"Toggle",		FORCE_BOOL )
