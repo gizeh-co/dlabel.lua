@@ -29,11 +29,7 @@ function PANEL:Init()
 	self:SetMouseInputEnabled( false )
 	self:SetKeyboardInputEnabled( false )
 	self:SetDoubleClickingEnabled( true )
-
-	-- Nicer default height
 	self:SetTall( 20 )
-
-	-- This turns off the engine drawing
 	self:SetPaintBackgroundEnabled( false )
 	self:SetPaintBorderEnabled( false )
 
@@ -165,8 +161,6 @@ function PANEL:OnMousePressed( mousecode )
 
 	end
 
-	-- If we're selectable and have shift held down then go up
-	-- the parent until we find a selection canvas and start box selection
 	if ( self:IsSelectable() && mousecode == MOUSE_LEFT && input.IsShiftDown() ) then
 
 		return self:StartBoxSelection()
@@ -177,10 +171,6 @@ function PANEL:OnMousePressed( mousecode )
 	self.Depressed = true
 	self:OnDepressed()
 	self:InvalidateLayout( true )
-
-	--
-	-- Tell DragNDrop that we're down, and might start getting dragged!
-	--
 	self:DragMousePress( mousecode )
 
 end
@@ -198,9 +188,6 @@ function PANEL:OnMouseReleased( mousecode )
 		self:InvalidateLayout( true )
 	end
 
-	--
-	-- If we were being dragged then don't do the default behaviour!
-	--
 	if ( self:DragMouseRelease( mousecode ) ) then
 		return
 	end
@@ -216,14 +203,6 @@ function PANEL:OnMouseReleased( mousecode )
 
 	if ( !self.Hovered ) then return end
 
-	--
-	-- For the purposes of these callbacks we want to
-	-- keep depressed true. This helps us out in controls
-	-- like the checkbox in the properties dialog. Because
-	-- the properties dialog will only manually change the value
-	-- if IsEditing() is true - and the only way to work out if
-	-- a label/button based control is editing is when it's depressed.
-	--
 	self.Depressed = true
 
 	if ( mousecode == MOUSE_RIGHT ) then
@@ -285,7 +264,6 @@ end
 
 derma.DefineControl( "DLabel", "A Label", PANEL, "Label" )
 
--- Convenience Function
 function Label( strText, parent )
 
 	local lbl = vgui.Create( "DLabel", parent )
