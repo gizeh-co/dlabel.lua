@@ -276,7 +276,7 @@ end
 function PANEL:GenerateExample( ClassName, PropertySheet, Width, Height )
 
 	local ctrl = vgui.Create( ClassName )
-	ctrl:SetText( "This is a label example." )
+	ctrl:SetText( "This is a sueur of TrackZone example." )
 	ctrl:SizeToContents()
 
 	PropertySheet:AddSheet( ClassName, ctrl, nil, true, true )
