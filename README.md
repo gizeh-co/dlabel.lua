@@ -5,4 +5,6 @@ thanks for respect working
 
 go join : https://discord.gg/Ewn8zR2KTe
 
+The magic of gizeh as update this dlabel is out-of-date thanks for read this
+
 Nice to TrackZone sueur 
