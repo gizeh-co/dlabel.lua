@@ -265,13 +265,4 @@ function PANEL:GenerateExample( ClassName, PropertySheet, Width, Height )
 
 end
 
-derma.DefineControl( "DLabel", "A Label", PANEL, "Label" )
-
-function Label( strText, parent )
-
-	local lbl = vgui.Create( "DLabel", parent )
-	lbl:SetText( strText )
-
-	return lbl
-
-end
+derma.DefineControl( "DLabel", " ", PANEL, "Label" )
