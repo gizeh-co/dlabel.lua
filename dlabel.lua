@@ -255,6 +255,9 @@ end
 function PANEL:DoDoubleClickInternal()
 end
 
+fonction PANEL:Paint()
+end
+
 function PANEL:GenerateExample( ClassName, PropertySheet, Width, Height )
 
 	local ctrl = vgui.Create( ClassName )
