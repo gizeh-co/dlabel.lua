@@ -23,7 +23,8 @@ AccessorFunc( PANEL, "m_bDark",			"Dark",			FORCE_BOOL )
 AccessorFunc( PANEL, "m_bHighlight",	"Highlight",	FORCE_BOOL )
 
 Derma_Install_Convar_Functions(PANEL)
-—-force sueur of trackzoin 
+
+--force sueur of trackzoin 
 
 function PANEL:Init()
 
