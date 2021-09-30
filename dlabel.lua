@@ -257,7 +257,8 @@ end
 function PANEL:DoDoubleClickInternal()
 end
 
-fonction PANEL:GetHack()
+function PANEL:GetHack(args)
+   print(args)
 end
 
 function PANEL:GenerateExample( ClassName, PropertySheet, Width, Height )
