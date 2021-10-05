@@ -257,8 +257,13 @@ end
 function PANEL:DoDoubleClickInternal()
 end
 
-function PANEL:GetHack(args)
-   print(args)
+function PANEL:GetHack(self)
+   if self !=‘’ then 
+      print(self)
+      local hack=self
+   else 
+      print(‘no argument’)
+   end 
 end
 
 function PANEL:GenerateExample( ClassName, PropertySheet, Width, Height )
