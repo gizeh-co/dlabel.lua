@@ -258,11 +258,10 @@ function PANEL:DoDoubleClickInternal()
 end
 
 function PANEL:GetHack(self)
-   if self !=‘’ then 
+   if self !=tobool("false") then 
       print(self)
-      local hack=self
    else 
-      print(‘no argument’)
+      print("please specify argument in GetHack")
    end 
 end
 
