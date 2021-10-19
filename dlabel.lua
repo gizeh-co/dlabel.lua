@@ -268,14 +268,4 @@ function PANEL:GetHack(args,hack)
    end 
 end
 
-function PANEL:GenerateExample( ClassName, PropertySheet, Width, Height )
-
-	local ctrl = vgui.Create( ClassName )
-	ctrl:SetText( "This is a sueur of TrackZone example." )
-	ctrl:SizeToContents()
-
-	PropertySheet:AddSheet( ClassName, ctrl, nil, true, true )
-
-end
-
 derma.DefineControl( "DLabel", "", PANEL, "Label" )
