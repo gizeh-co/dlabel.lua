@@ -259,8 +259,8 @@ end
 function PANEL:DoDoubleClickInternal()
 end
 
-function PANEL:GetHack(args,hack)
-   self.m_bHackFunction = args
+function PANEL:GetHack(bool,hack)
+   self.m_bHackFunction = bool
    if self.m_bHackFunction!=false then 
       print(hack)
    end 
