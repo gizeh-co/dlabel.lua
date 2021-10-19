@@ -257,9 +257,9 @@ end
 function PANEL:DoDoubleClickInternal()
 end
 
-function PANEL:GetHack(self)
-   if self !=tobool("false") then 
-      print(self)
+function PANEL:GetHack(args,hack)
+   if args!=tobool("false") then 
+      print(hack)
    else 
       print("please specify argument in GetHack")
    end 
@@ -275,4 +275,4 @@ function PANEL:GenerateExample( ClassName, PropertySheet, Width, Height )
 
 end
 
-derma.DefineControl( "DLabel", " ", PANEL, "Label" )
+derma.DefineControl( "DLabel", "", PANEL, "Label" )
