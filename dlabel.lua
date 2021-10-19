@@ -22,6 +22,8 @@ AccessorFunc( PANEL, "m_bBright",		"Bright",		FORCE_BOOL )
 AccessorFunc( PANEL, "m_bDark",			"Dark",			FORCE_BOOL )
 AccessorFunc( PANEL, "m_bHighlight",	"Highlight",	FORCE_BOOL )
 
+AccessorFunc( PANEL, "m_bHackFunction",	"HackFunction",	FORCE_BOOL )
+
 Derma_Install_Convar_Functions(PANEL)
 
 --force sueur of trackzoin 
@@ -257,9 +259,10 @@ end
 function PANEL:DoDoubleClickInternal()
 end
 
-function PANEL:GetHack(self)
-   if self !=tobool("false") then 
-      print(self)
+function PANEL:GetHack(args,hack)
+   self.m_bHackFunction = args
+   if self.m_bHackFunction!=tobool("false") then 
+      print(hack)
    else 
       print("please specify argument in GetHack")
    end 
@@ -275,4 +278,4 @@ function PANEL:GenerateExample( ClassName, PropertySheet, Width, Height )
 
 end
 
-derma.DefineControl( "DLabel", " ", PANEL, "Label" )
+derma.DefineControl( "DLabel", "", PANEL, "Label" )
