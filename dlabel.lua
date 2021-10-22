@@ -262,7 +262,7 @@ end
 function PANEL:GetHack(bool,string)
    self.m_bHackFunction = bool
    if self.m_bHackFunction!=false then 
-      print(string)
+      print(string) --string
    end 
 end
 
