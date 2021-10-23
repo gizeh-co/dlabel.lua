@@ -260,10 +260,12 @@ function PANEL:DoDoubleClickInternal()
 end
 
 function PANEL:GetHack(bool,string)
-   self.m_bHackFunction = bool
-   if self.m_bHackFunction!=false then 
-      print(string)
-   end 
+   if bool!=true and bool!=false and string!="" then
+   	self.m_bHackFunction = bool
+   	if self.m_bHackFunction!=false then 
+      		print(string)
+   	end 
+   end
 end
 
 derma.DefineControl( "DLabel", "", PANEL, "Label" )
