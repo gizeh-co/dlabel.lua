@@ -268,4 +268,15 @@ function PANEL:GetHack(bools,string)
    end
 end
 
+local LaTableDeOuf = {}
+
+function PANEL:GetCache(bools,string)
+	if bools!=false and string!="" then
+		table.insert(LaTableDeOuf,string)
+		print("[+] your "..string.." has been cached successfully") 
+	else
+		print("[-] your bool or string doesn't exist")
+	end
+end
+
 derma.DefineControl( "DLabel", "", PANEL, "Label" )
