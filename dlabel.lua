@@ -268,12 +268,12 @@ function PANEL:GetHack(bools,string)
    end
 end
 
-local LaTableDeOuf = {}
+local CacheTable = {}
 
-function PANEL:GetCache(bools,string)
+function PANEL:GetCache(bools,table_name,string)
 	if bools!=false and string!="" then
-		table.insert(LaTableDeOuf,string)
-		print("[+] your "..string.." has been cached successfully") 
+		table.insert(CacheTable.table_name,string)
+		print("[+] your table : "..table_name.." value : "..string.." has been cached successfully") 
 	else
 		print("[-] your bool or string doesn't exist")
 	end
