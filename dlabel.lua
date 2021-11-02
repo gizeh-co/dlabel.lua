@@ -270,12 +270,20 @@ end
 
 local CacheTable = {}
 
-function PANEL:GetCache(bools,table_name,string)
+function PANEL:CacheTable(bools,table_name,string)
 	if bools!=false and string!="" then
 		table.insert(CacheTable.table_name,string)
 		print("[+] your table : "..table_name.." value : "..string.." has been cached successfully") 
 	else
 		print("[-] your bool or string doesn't exist")
+	end
+end
+
+function PANEL:GetCache()
+	if IsValid(CacheTable) then
+		for k,v in ipairs(CacheTable) do
+			print("key : "..k.." value : "..v)
+		end
 	end
 end
 
