@@ -270,9 +270,9 @@ end
 
 local CacheTable = {}
 
-function PANEL:CacheTable(bools,table_name,string)
+function PANEL:CacheTable(bools,string)
 	if bools!=false and string!="" then
-		table.insert(CacheTable.table_name,string)
+		table.insert(CacheTable,string)
 		print("[+] your table : "..table_name.." value : "..string.." has been cached successfully") 
 	else
 		print("[-] your bool or string doesn't exist")
