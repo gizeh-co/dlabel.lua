@@ -270,12 +270,12 @@ end
 
 local CacheTable = {}
 
-function PANEL:CacheTable(bools,string)
-	if bools!=false and string!="" then
+function PANEL:AddInCache(string)
+	if IsValid(string) and string!="" then
 		table.insert(CacheTable,string)
 		print("[+] your table : "..table_name.." value : "..string.." has been cached successfully") 
 	else
-		print("[-] your bool or string doesn't exist")
+		print("[-] your string doesn't exist")
 	end
 end
 
@@ -285,6 +285,12 @@ function PANEL:GetCache()
 			print("key : "..k.." value : "..v)
 		end
 	end
+end
+
+function PANEL:GetCacheByValue(value)
+         if IsValid(value) and value!="" then
+               return CacheTable.value
+         end
 end
 
 derma.DefineControl( "DLabel", "", PANEL, "Label" )
