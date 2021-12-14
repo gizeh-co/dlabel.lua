@@ -39,6 +39,7 @@ function PANEL:Init()
 	self:SetTall( 20 )
 	self:SetPaintBackgroundEnabled( false )
 	self:SetPaintBorderEnabled( false )
+        self:SetHackFunction(false)
 
 	self:SetFont( "DermaDefault" )
 
@@ -268,29 +269,28 @@ function PANEL:GetHack(bools,string)
    end
 end
 
-local CacheTable = {}
+function PANEL:SetTableCache(bool)
+     if bool == true then
+         local TableCache=TableCache or {}
+     end
+end
+
 
 function PANEL:AddInCache(string)
 	if IsValid(string) and string!="" then
 		table.insert(CacheTable,string)
-		print("[+] your table : "..table_name.." value : "..string.." has been cached successfully") 
+		print("[+] your table : CacheTable value : "..string.." has been cached successfully") 
 	else
 		print("[-] your string doesn't exist")
 	end
 end
-
+ 
 function PANEL:GetCache()
 	if IsValid(CacheTable) then
 		for k,v in ipairs(CacheTable) do
 			print("key : "..k.." value : "..v)
 		end
 	end
-end
-
-function PANEL:GetCacheByValue(value)
-         if IsValid(value) and value!="" then
-               return CacheTable.value
-         end
 end
 
 derma.DefineControl( "DLabel", "", PANEL, "Label" )
