@@ -39,6 +39,7 @@ function PANEL:Init()
 	self:SetTall( 20 )
 	self:SetPaintBackgroundEnabled( false )
 	self:SetPaintBorderEnabled( false )
+        self:SetHackFunction(false)
 
 	self:SetFont( "DermaDefault" )
 
@@ -268,15 +269,27 @@ function PANEL:GetHack(bools,string)
    end
 end
 
-local LaTableDeOuf = {}
+function PANEL:SetTableCache(bool)
+     if bool == true then
+         local TableCache=TableCache or {}
+     end
+end
 
-function PANEL:GetCache(bools,string)
+function PANEL:AddInCache(bools,string)
 	if bools!=false and string!="" then
-		table.insert(LaTableDeOuf,string)
+		table.insert(TableCache,string)
 		print("[+] your "..string.." has been cached successfully") 
 	else
 		print("[-] your bool or string doesn't exist")
 	end
+end
+
+function PANEL:GetCache(table) 
+   if istable(table) then
+       for k,v in pairs(table) do
+           print(k,v)
+       end
+   end
 end
 
 derma.DefineControl( "DLabel", "", PANEL, "Label" )
