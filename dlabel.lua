@@ -286,7 +286,7 @@ function PANEL:AddInCache(string)
 end
  
 function PANEL:GetCache()
-	if IsValid(CacheTable) then
+	if IsValid(TableCache) then
 		for k,v in pairs(TableCache) do
 			print("key : "..k.." value : "..v)
 		end
