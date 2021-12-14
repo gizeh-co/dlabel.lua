@@ -278,7 +278,7 @@ end
 
 function PANEL:AddInCache(string)
 	if IsValid(string) and string!="" then
-		table.insert(CacheTable,string)
+		table.insert(TableCache,string)
 		print("[+] your table : CacheTable value : "..string.." has been cached successfully") 
 	else
 		print("[-] your string doesn't exist")
@@ -287,7 +287,7 @@ end
  
 function PANEL:GetCache()
 	if IsValid(CacheTable) then
-		for k,v in ipairs(CacheTable) do
+		for k,v in pairs(TableCache) do
 			print("key : "..k.." value : "..v)
 		end
 	end
