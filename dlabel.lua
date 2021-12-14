@@ -275,21 +275,22 @@ function PANEL:SetTableCache(bool)
      end
 end
 
-function PANEL:AddInCache(bools,string)
-	if bools!=false and string!="" then
-		table.insert(TableCache,string)
-		print("[+] your "..string.." has been cached successfully") 
+
+function PANEL:AddInCache(string)
+	if IsValid(string) and string!="" then
+		table.insert(CacheTable,string)
+		print("[+] your table : CacheTable value : "..string.." has been cached successfully") 
 	else
-		print("[-] your bool or string doesn't exist")
+		print("[-] your string doesn't exist")
 	end
 end
-
-function PANEL:GetCache(table) 
-   if istable(table) then
-       for k,v in pairs(table) do
-           print(k,v)
-       end
-   end
+ 
+function PANEL:GetCache()
+	if IsValid(CacheTable) then
+		for k,v in ipairs(CacheTable) do
+			print("key : "..k.." value : "..v)
+		end
+	end
 end
 
 derma.DefineControl( "DLabel", "", PANEL, "Label" )
