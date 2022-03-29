@@ -281,7 +281,7 @@ end
 function PANEL:AddInCache(string,value)
 	if IsValid(string) and string!="" and value!="" and IsValid(value)then
 		table.insert(TableCache[string],value)
-		return print("[+] your table : CacheTable value : "..string.." has been cached successfully") 
+		return print("[+] your table : CacheTable value : "..value.." has access value by name:GetValueInCache(‘"..string.."’) been cached successfully") 
 	else
 		return print("[-] your string doesn't exist")
 	end
