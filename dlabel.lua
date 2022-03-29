@@ -264,7 +264,7 @@ function PANEL:GetHack(bools,string)
    if bools and string!="" then
    	self.m_bHackFunction = bools
    	if self.m_bHackFunction!=false then 
-      		print(string)
+      		return print(string)
    	end 
    end
 end
@@ -272,25 +272,26 @@ end
 function PANEL:SetTableCache(bool)
      if bool == true then
          local TableCache=TableCache or {}
+         return print("[+] Cache Table is set")
+     else
+         return print("[-] Cache Table did not set")
      end
 end
 
 
-function PANEL:AddInCache(string)
-	if IsValid(string) and string!="" then
-		table.insert(TableCache,string)
-		print("[+] your table : CacheTable value : "..string.." has been cached successfully") 
+function PANEL:AddInCache(string,value)
+	if IsValid(string) and string!="" and value!="" and IsValid(value)then
+		table.insert(TableCache[string],value)
+		return print("[+] your table : CacheTable value : "..string.." has been cached successfully") 
 	else
-		print("[-] your string doesn't exist")
+		return print("[-] your string doesn't exist")
 	end
 end
  
-function PANEL:GetCache()
-	if IsValid(TableCache) then
-		for k,v in pairs(TableCache) do
-			print("key : "..k.." value : "..v)
-		end
-	end
+function PANEL:GetValueInCache(string)
+        if IsValid(string) and string!="" then
+	      return TableCache[string]
+        end
 end
 
 derma.DefineControl( "DLabel", "", PANEL, "Label" )
